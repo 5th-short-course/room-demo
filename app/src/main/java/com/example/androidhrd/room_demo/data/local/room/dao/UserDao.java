@@ -8,6 +8,7 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
 import com.example.androidhrd.room_demo.data.local.room.entity.User;
+import com.example.androidhrd.room_demo.data.local.room.entity.UserBooks;
 
 import java.util.List;
 
@@ -27,4 +28,8 @@ public interface UserDao {
     List<User> getAll();
     @Query("SELECT * FROM USERS WHERE id= :id")
     User getUserById(int id);
+
+    //get user books
+    @Query("SELECT * FROM USERS ORDER BY ID ASC")
+    List<UserBooks> getUserBooks();
 }
